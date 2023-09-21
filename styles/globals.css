@@ -68,8 +68,10 @@ html {
 }
 
 body {
-	@apply bg-black text-white h-full w-full overflow-x-hidden text-base font-normal;
+	@apply bg-black text-white h-full w-full leading-6 overflow-x-hidden text-base font-normal;
 	font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .no-transition * {
@@ -102,11 +104,23 @@ body {
 }
 
 .ai-container {
-    @apply max-w-7xl mx-auto px-6;
+    @apply max-w-7xl mx-auto px-6 sm:px-8;
+}
+
+.ai-container-alt {
+    @apply max-w-6xl mx-auto px-6 sm:px-8;
+}
+
+.flex-center {
+    @apply flex justify-center items-center;
 }
 
 .section {
-    @apply py-12 md:py-20;
+    @apply py-12;
+}
+
+.button {
+    @apply flex justify-center items-center font-bold rounded px-6 h-14 min-w-[11rem] bg-gradient-ai;
 }
 
 h1,

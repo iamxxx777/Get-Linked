@@ -25,7 +25,8 @@ const config: Config = {
 			},
 			colors: {
 				black: {
-					DEFAULT: "#150E28"
+					DEFAULT: "#150E28",
+					border: "#ffffff2e"
 				},
 				blue: {
 					DEFAULT: "#903AFF"
