@@ -48,9 +48,9 @@
 		display: grid;
 		grid-template-columns: max-content 1fr;
 	}
-	.grid-max-auto-max {
+	.grid-auto-max-auto {
 		display: grid;
-		grid-template-columns: max-content 1fr max-content;
+		grid-template-columns: 1fr max-content 1fr;
 	}
 }
 
@@ -60,11 +60,11 @@ html {
 
 * {
 	box-sizing: border-box;
-	transition: all ease-in-out 0.4s;
-	-o-transition: all ease-in-out 0.4s;
-	-ms-transition: all ease-in-out 0.4s;
-	-moz-transition: all ease-in-out 0.4s;
-	-webkit-transition: all ease-in-out 0.4s;
+	transition: all ease-in-out 0.3s;
+	-o-transition: all ease-in-out 0.3s;
+	-ms-transition: all ease-in-out 0.3s;
+	-moz-transition: all ease-in-out 0.3s;
+	-webkit-transition: all ease-in-out 0.3s;
 }
 
 body {
@@ -117,6 +117,10 @@ body {
 
 .section {
     @apply py-12;
+}
+
+.section-alt {
+    @apply py-12 md:py-16 lg:py-20;
 }
 
 .button {

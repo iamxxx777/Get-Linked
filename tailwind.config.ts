@@ -33,6 +33,9 @@ const config: Config = {
 				},
 				orchid: {
 					DEFAULT: "#D434FE"
+				},
+				pink: {
+					DEFAULT: "#FF26B9"
 				}
 			}
 		}
