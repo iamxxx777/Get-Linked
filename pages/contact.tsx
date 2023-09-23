@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
 
@@ -14,6 +15,8 @@ const Contact = () => {
         reset,
         formState: { errors },
     } = useForm();
+
+    const router = useRouter();
 
     const [loading, setLoading] = useState(false);
     const [showSucess, setShowSuccess] = useState(false);
@@ -91,7 +94,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='px-3'>
-                    <button className='relative md:hidden mb-10 w-10 h-10 rounded-full bg-gradient-ai border-0 outline-none p-[1px]'>
+                    <button onClick={() => router.back()} className='relative md:hidden mb-10 w-10 h-10 rounded-full bg-gradient-ai border-0 outline-none p-[1px]'>
                         <div className='flex-center w-full h-full rounded-full bg-black text-white'>
                             <Image
                                 src="/icons/angle-left.svg"
@@ -138,7 +141,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                             ></textarea>
-                            <button type='submit' className="button mx-auto">{loading ? <Spinner /> : "Submit"}</button>
+                            <button disabled={loading} type='submit' className="button mx-auto">{loading ? <Spinner /> : "Submit"}</button>
                         </form>
                     </div>
                     <div className='mt-8 md:hidden'>

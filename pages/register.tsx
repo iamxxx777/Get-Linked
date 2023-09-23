@@ -165,7 +165,7 @@ const Register = ({ data }: any) => {
                                 />
                                 <p>I agreed with the event terms and conditions  and privacy policy</p>
                             </div>
-                            <button type='submit' className="button mt-8 mx-auto md:w-full">{loading ? <Spinner /> : "Register"}</button>
+                            <button disabled={loading} type='submit' className="button mt-8 mx-auto md:w-full">{loading ? <Spinner /> : "Register"}</button>
                         </form>
                     </div>
                 </div>
