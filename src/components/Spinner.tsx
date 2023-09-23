@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function Spinner({
-    size = 1,
+    size = 2,
     className,
     color = 'white'
 }: Props) {
