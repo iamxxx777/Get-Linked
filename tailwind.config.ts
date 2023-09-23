@@ -8,6 +8,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			dropShadow: {
+				ai: "0 4px 4px rgba(0, 0, 0, 0.25)"
+			},
 			fontFamily: {
 				clash: ["clash"],
 				"clash-light": ["clash-light"],

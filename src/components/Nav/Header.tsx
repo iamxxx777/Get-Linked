@@ -1,28 +1,44 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const navigationData = [
-    'Timeline',
-    'Overview',
-    'FAQs',
-    'Contact'
+    {
+        href: "/#timeline",
+        name: "Timeline"
+    },
+    {
+        href: "/#overview",
+        name: "Overview"
+    },
+    {
+        href: "/#faqs",
+        name: "FAQs"
+    },
+    {
+        href: "/contact",
+        name: "Contact"
+    }
 ]
 
 const Header = () => {
     const [showNav, setShowNav] = useState(false);
+    const { pathname } = useRouter();
 
     return (
-        <header className='w-full py-8 px-6 lg:py-6'>
+        <header className='w-full py-8 px-4 lg:py-6'>
             <div className="ai-container flex justify-between items-center">
-                <div>
+                <Link href={"/"}>
                     <h2 className='text-lg md:text-4xl'>get<span className='text-orchid'>linked</span></h2>
-                </div>
+                </Link>
                 <div className='hidden lg:flex justify-end items-center gap-16'>
-                    {navigationData.map((item: string) => (
-                        <Link key={item} href={'/'} className='text-base font-medium'>{item}</Link>
+                    {navigationData.map((item: any, index) => (
+                        <Link key={index} href={item.href} className={`${pathname.includes(item.href) && "text-gradient-ai"} text-base font-medium`}>{item.name}</Link>
                     ))}
-                    <button className='button !h-14'>Get Started</button>
+                    <button className='button !h-14'>
+                        <Link href="/register">Get Started</Link>
+                    </button>
                 </div>
                 <div className='lg:hidden'>
                     <button onClick={() => setShowNav(true)}>
@@ -41,10 +57,12 @@ const Header = () => {
                         <button className='text-3xl' onClick={() => setShowNav(false)}><h2>&#x2715;</h2></button>
                     </div>
                     <div className='flex flex-col gap-8 items-start'>
-                        {navigationData.map((item: string) => (
-                            <Link key={item} href={'/'} className='font-medium text-lg'>{item}</Link>
+                        {navigationData.map((item: any, index) => (
+                            <Link key={index} href={item.href} className={`${pathname.includes(item.href) && "text-gradient-ai"} text-xl font-medium`}>{item.name}</Link>
                         ))}
-                        <button className='button'>Get Started</button>
+                        <button className='button'>
+                            <Link href="/register">Get Started</Link>
+                        </button>
                     </div>
                 </div>
             </div>

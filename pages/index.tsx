@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@/src/components/Nav/Header'
+import Footer from '@/src/components/Footer'
 
 const faqs = [
     'Can I work on a project I started before the hackathon?',
@@ -65,7 +67,7 @@ export default function Home() {
     return (
         <main className='w-full'>
             <Header />
-            <section className='section md:pt-8 !pb-0 border-t border-t-black-border border-b border-b-black-border'>
+            <section className='section relative md:pt-8 !pb-0 border-t border-t-black-border border-b border-b-black-border'>
                 <div className="ai-container">
                     <div className='w-full flex-center md:justify-end'>
                         <div className='max-w-[21rem] lg:max-w-none'>
@@ -103,7 +105,9 @@ export default function Home() {
                             </div>
                             <p className='text-sm md:text-base lg:text-lg font-medium leading-6 text-center md:text-left px-5 md:px-0'>Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize</p>
                             <div className="mt-8 lg:mt-10">
-                                <button className="button w-fit">Register</button>
+                                <button className="button w-fit">
+                                    <Link href={"/"}>Register</Link>
+                                </button>
                             </div>
                             <div className="mt-8 lg:mt-16 flex justify-center md:justify-start items-center gap-6">
                                 <div className='flex justify-start items-end'>
@@ -135,6 +139,13 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <Image
+                    src={'/lens-left.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute hidden lg:block -top-24 left-0 opacity-60 -z-[1]'
+                />
             </section>
             <section className="section border-b border-b-black-border">
                 <div className="ai-container-alt grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
@@ -198,6 +209,20 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <Image
+                    src={'/lens-2.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute -top-4 left-0 opacity-60 -z-[1]'
+                />
+                <Image
+                    src={'/lens-3.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute top-0 right-0 opacity-60 -z-[1]'
+                />
             </section>
             <section className="section border-b border-b-black-border">
                 <div className="ai-container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
@@ -250,6 +275,20 @@ export default function Home() {
                         <button className="button !h-12 lg:!h-14 mt-8 lg:mt-12 mx-auto md:ml-0">Read More</button>
                     </div>
                 </div>
+                <Image
+                    src={'/lens-4.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute -top-4 left-0 opacity-60 -z-[1]'
+                />
+                <Image
+                    src={'/lens-5.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute top-0 right-0 opacity-60 -z-[1]'
+                />
             </section>
             <section className="section-alt border-b border-b-black-border">
                 <div className="ai-container-alt grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
@@ -364,7 +403,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <div className="section-alt relative">
+            <section className="section-alt relative">
                 <div className="bg-[url('/bg.svg')] bg-transparent bg-opacity-20 -z-[1] bg-center bg-cover absolute top-0 left-0 w-full h-full"></div>
                 <div className="ai-container">
                     <div className='text-center md:text-left text-xl md:text-2xl lg:text-3xl relative lg:flex lg:justify-end'>
@@ -374,7 +413,7 @@ export default function Home() {
                             <p className='mt-4 text-xs md:text-base'>Highlight of the prizes or rewards for winners and for participants.</p>
                         </div>
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-8 mt-12 lg:mt-24'>
+                    <div className='grid grid-cols-1 md:prize-grid gap-32 md:gap-8 mt-12 lg:mt-24'>
                         <div className="flex-center">
                             <Image
                                 src={'/prize.png'}
@@ -384,8 +423,8 @@ export default function Home() {
                             />
                         </div>
                         <div className='grid grid-cols-3 gap-4 md:items-center'>
-                            <div className="h-fit text-center border border-orchid rounded-lg py-6 lg:py-12 relative bg-orchid bg-opacity-10 text-2xl font-bold">
-                                <div className='flex-center -mt-28'>
+                            <div className="h-fit text-center border border-orchid rounded-lg py-8 lg:py-12 relative bg-orchid bg-opacity-10 text-xs lg:text-2xl font-bold">
+                                <div className='flex-center -mt-16 lg:-mt-28'>
                                     <Image
                                         src={'/silver_medal.png'}
                                         alt="medal"
@@ -397,11 +436,11 @@ export default function Home() {
                                 <div className="px-4">
                                     <p className="mt-3">2nd</p>
                                     <p className="mb-2">Runner</p>
-                                    <p className="text-2xl text-orchid">N400,000</p>
+                                    <p className="text-sm lg:text-2xl text-orchid">N400,000</p>
                                 </div>
                             </div>
-                            <div className="h-fit text-center border border-blue rounded-lg py-8 lg:py-16 relative bg-blue bg-opacity-10 text-2xl font-bold">
-                                <div className='flex-center scale-150 -mt-24'>
+                            <div className="h-fit text-center border border-blue rounded-lg py-8 lg:py-16 relative bg-blue bg-opacity-10 text-xs lg:text-2xl font-bold">
+                                <div className='flex-center scale-150 -mt-16 lg:-mt-24'>
                                     <Image
                                         src={'/gold_medal.png'}
                                         alt="medal"
@@ -413,11 +452,11 @@ export default function Home() {
                                 <div className="px-4 mt-10">
                                     <p className="mt-3">1st</p>
                                     <p className="mb-2">Runner</p>
-                                    <p className="text-2xl text-blue">N400,000</p>
+                                    <p className="text-sm lg:text-2xl text-blue">N400,000</p>
                                 </div>
                             </div>
-                            <div className="h-fit text-center border border-orchid rounded-lg py-6 lg:py-12 relative bg-orchid bg-opacity-10 text-2xl font-bold">
-                                <div className='flex-center -mt-28'>
+                            <div className="h-fit text-center border border-orchid rounded-lg py-8 lg:py-12 relative bg-orchid bg-opacity-10 text-xs lg:text-2xl font-bold">
+                                <div className='flex-center -mt-16 lg:-mt-28'>
                                     <Image
                                         src={'/bronze_medal.png'}
                                         alt="medal"
@@ -429,13 +468,170 @@ export default function Home() {
                                 <div className="px-4">
                                     <p className="mt-3">3rd</p>
                                     <p className="mb-2">Runner</p>
-                                    <p className="text-2xl text-orchid">N400,000</p>
+                                    <p className="text-sm lg:text-2xl text-orchid">N400,000</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section className="section-alt relative border-b border-b-black-border">
+                <div className="ai-container">
+                    <div className='text-center relative max-w-lg mx-auto'>
+                        <h2 className='text-xl md:text-2xl lg:text-3xl'>Partners and Sponsors</h2>
+                        <p className='mt-3 text-center text-xs md:text-base leading-6 md:leading-7'>
+                            Getlinked Hackathon 1.0 is honored to have the following major companies as its partners and sponsors
+                        </p>
+                    </div>
+                    <div className="mt-10 lg:mt-16 rounded grid grid-cols-3 gap-2 lg:gap-6 border border-orchid py-8 px-6 md:p-24 lg:px-36">
+                        <div className="flex-center px-5 py-2">
+                            <Image
+                                src={'/liberty.svg'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                        </div>
+                        <div className="flex-center px-5 py-2 border-l-2 border-l-orchid border-r-2 border-r-orchid">
+                            <Image
+                                src={'/liberty-pay.svg'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                        </div>
+                        <div className="flex-center px-5 py-2">
+                            <Image
+                                src={'/winwise.png'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                        </div>
+                        <div className="flex-center px-5 py-2 lg:pt-8 border-t-2 border-t-orchid">
+                            <Image
+                                src={'/wisper.svg'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                        </div>
+                        <div className="flex-center relative px-5 py-2">
+                            <Image
+                                src={'/paybox.svg'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                            <div className='bg-orchid h-[2px] absolute top-0 left-2 lg:left-6 w-[calc(100%-1rem)] lg:w-[calc(100%-3rem)]' />
+                            <div className='bg-orchid w-[2px] absolute top-2 lg:top-6 right-0 h-full' />
+                            <div className='bg-orchid w-[2px] absolute top-2 lg:top-6 left-0 h-full' />
+                        </div>
+                        <div className="flex-center px-5 py-2 border-t-2 border-t-orchid">
+                            <Image
+                                src={'/vizual-plus.svg'}
+                                alt='Liberty'
+                                width={31}
+                                height={30}
+                                className='w-32'
+                            />
+                        </div>
+                    </div>
+                </div>
+                <Image
+                    src={'/lens-7.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute -top-4 left-0 opacity-60 -z-[1]'
+                />
+                <Image
+                    src={'/lens-8.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute top-0 right-0 opacity-60 -z-[1]'
+                />
+            </section>
+            <section className="section-alt" id='terms'>
+                <div className="ai-container-alt grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-16">
+                    <div>
+                        <div className='text-center md:text-left text-xl md:text-2xl lg:text-3xl relative'>
+                            <h2>Privacy policy and</h2>
+                            <h3 className='text-orchid'>Terms</h3>
+                            <p className='text-xs md:text-sm text-white text-opacity-75 mt-4'>Last updated on September 12, 2023</p>
+                            <p className='text-xs md:text-sm mt-6 leading-6 md:leading-7'>Below are our privacy & policy, which outline a lot of goodies. it&apos;s our aim to always take of our participant</p>
+                        </div>
+                        <div className='border border-orchid rounded px-6 py-12 lg:px-12 mt-10'>
+                            <p className='text-xs md:text-sm leading-6 md:leading-7 text-center md:text-left mb-6'>
+                                At getlinked tech Hackathon 1.0, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose,
+                                and safeguard your data when you participate in our tech hackathon event. By participating in our event, you consent to the practices described in this policy.
+                            </p>
+                            <div>
+                                <p className='font-bold text-sm md:text-base text-orchid'>Licensing Policy</p>
+                                <p className='font-bold text-xs md:text-base mt-2'>Here are terms of our Standard License:</p>
+                                <div className="grid-max-auto gap-3 mt-7">
+                                    <div>
+                                        <Image
+                                            src={'/icons/check.svg'}
+                                            alt='Checkmark'
+                                            width={20}
+                                            height={20}
+                                            className='mt-1'
+                                        />
+                                    </div>
+                                    <p className='text-xs md:text-sm leading-6 md:leading-7'>The Standard License grants you a non-exclusive right to navigate and register for our event</p>
+                                </div>
+                                <div className="grid-max-auto gap-3 mt-5">
+                                    <div>
+                                        <Image
+                                            src={'/icons/check.svg'}
+                                            alt='Checkmark'
+                                            width={20}
+                                            height={20}
+                                            className='mt-1'
+                                        />
+                                    </div>
+                                    <p className='text-xs md:text-sm leading-6 md:leading-7'>You are licensed to use the item available at any free source sites, for your project developement</p>
+                                </div>
+                                <button className="button mt-10 mx-auto !h-12">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex-center'>
+                        <div className='relative px-6'>
+                            <Image
+                                src={"/shield.svg"}
+                                alt='Shield'
+                                width={450}
+                                height={450}
+                                className=''
+                            />
+                            <div className="relative -mt-64 md:-mt-72 lg:-mt-96">
+                                <Image
+                                    src={"/padlock.png"}
+                                    alt='Padlock'
+                                    width={450}
+                                    height={450}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Image
+                    src={'/lens-6.png'}
+                    alt='lens'
+                    width={600}
+                    height={600}
+                    className='absolute -bottom-12 left-0 opacity-60 -z-[1]'
+                />
+            </section>
+            <Footer />
         </main>
     )
 }
