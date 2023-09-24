@@ -354,7 +354,7 @@ export default function Home() {
                                     <p className='text-xs leading-5 font-medium'>{timeline.details}</p>
                                 </div>
                                 <div className='flex justify-start items-center gap-4 -ml-2 mt-1'>
-                                    <div className="w-5 h-5 text-xs font-bold rounded-full bg-orchid text-white flex-center">{index}</div>
+                                    <div className="w-5 h-5 text-xs font-bold rounded-full bg-orchid text-white flex-center">{index + 1}</div>
                                     <p className='text-xs font-bold text-orchid'>{timeline.date}</p>
                                 </div>
                             </div>
@@ -384,7 +384,7 @@ export default function Home() {
                                 </div>
                                 <div className='flex flex-col items-center'>
                                     <div className={`${index === 0 ? 'h-36' : "h-24"} w-[3px] bg-orchid`}></div>
-                                    <div className="w-14 h-14 text-lg mt-2 font-bold rounded-full bg-orchid text-white flex-center">{index}</div>
+                                    <div className="w-14 h-14 text-lg mt-2 font-bold rounded-full bg-orchid text-white flex-center">{index + 1}</div>
                                 </div>
                                 <div>
                                     {index % 2 === 0 ? (
