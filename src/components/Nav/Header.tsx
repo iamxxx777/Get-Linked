@@ -34,7 +34,7 @@ const Header = () => {
                 </Link>
                 <div className='hidden lg:flex justify-end items-center gap-16'>
                     {navigationData.map((item: any, index) => (
-                        <Link key={index} href={item.href} className={`${pathname.includes(item.href) && "text-gradient-ai"} text-base font-medium`}>{item.name}</Link>
+                        <Link key={index} href={item.href} className={`${pathname.includes(item.href) && "text-orchid"} text-base font-medium md:hover:text-orchid`}>{item.name}</Link>
                     ))}
                     <button className='button !h-14'>
                         <Link href="/register">Get Started</Link>
