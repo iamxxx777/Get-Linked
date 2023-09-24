@@ -36,7 +36,7 @@ const Register = ({ data }: any) => {
 
         if (data.id) {
             setShowSuccess(true);
-            setLoading(true);
+            setLoading(false);
             reset();
         }
     }

@@ -25,9 +25,9 @@ const Contact = () => {
         setLoading(true);
         const { data } = await queryClient().post("hackathon/contact-form", values);
 
-        if (data.id) {
+        if (data) {
             setShowSuccess(true);
-            setLoading(true);
+            setLoading(false);
             reset();
         }
     }
@@ -118,14 +118,14 @@ const Contact = () => {
                                     required: true,
                                 })}
                             />
-                            <input
+                            {/* <input
                                 type="text"
                                 className='input'
                                 placeholder='Phone Number'
                                 {...register("phone_number", {
                                     required: true,
                                 })}
-                            />
+                            /> */}
                             <input 
                                 type="text" 
                                 className='input' 
